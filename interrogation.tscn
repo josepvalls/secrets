@@ -1,0 +1,88 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://photo.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/beige-wooden-textured-flooring-background.jpg" type="Texture" id=2]
+[ext_resource path="res://assets/circle_05.png" type="Texture" id=3]
+[ext_resource path="res://note.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/Notebook-Paper-PNG.png" type="Texture" id=5]
+[ext_resource path="res://assets/vecteezy_clear-view-front-smartphone-greenscreen_46589599.png" type="Texture" id=6]
+[ext_resource path="res://assets/Lined-Paper.svg" type="Texture" id=7]
+[ext_resource path="res://phone.tscn" type="PackedScene" id=8]
+[ext_resource path="res://InterrogationPaper.tscn" type="PackedScene" id=9]
+[ext_resource path="res://InterrogationFontTheme.tres" type="Theme" id=10]
+[ext_resource path="res://assets/ShantellSans-Medium.ttf" type="DynamicFontData" id=11]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+extra_spacing_bottom = -7
+font_data = ExtResource( 11 )
+
+[node name="InterrogationTest" type="Node2D"]
+
+[node name="Background" type="Sprite" parent="."]
+visible = false
+modulate = Color( 0.956863, 0.894118, 0.756863, 1 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
+color = Color( 0.701961, 0.701961, 0.701961, 1 )
+
+[node name="Light2D" type="Light2D" parent="."]
+visible = false
+position = Vector2( 844, 276 )
+texture = ExtResource( 3 )
+texture_scale = 8.0
+energy = 0.5
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Photo" parent="Node2D" instance=ExtResource( 1 )]
+position = Vector2( 992, 285 )
+
+[node name="Note" parent="Node2D" instance=ExtResource( 4 )]
+position = Vector2( 326, 723 )
+
+[node name="Note2" parent="Node2D" instance=ExtResource( 4 )]
+position = Vector2( 1343, 725 )
+
+[node name="Note3" parent="Node2D" instance=ExtResource( 4 )]
+position = Vector2( 1004, 723 )
+
+[node name="Note4" parent="Node2D" instance=ExtResource( 4 )]
+position = Vector2( 672, 721 )
+
+[node name="Notebook-Paper-Png" type="Sprite" parent="Node2D"]
+position = Vector2( 578, 290 )
+texture = ExtResource( 5 )
+
+[node name="Lined-Paper" type="Sprite" parent="."]
+visible = false
+position = Vector2( 803, 994 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 7 )
+
+[node name="VecteezyClear-view-front-smartphone-greenscreen46589599" type="Sprite" parent="."]
+visible = false
+position = Vector2( 1169, 746 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 6 )
+
+[node name="Phone" parent="." instance=ExtResource( 8 )]
+
+[node name="InterrogationPaper" parent="." instance=ExtResource( 9 )]
+
+[node name="Name" type="Label" parent="."]
+margin_left = 257.0
+margin_top = 210.0
+margin_right = 855.0
+margin_bottom = 740.0
+mouse_filter = 0
+theme = ExtResource( 10 )
+custom_fonts/font = SubResource( 1 )
+text = "dg fdg gf gfds gfds gfds gf dsgfdsgdsgfdsgdsgfdsgdsgfdsgdg fdg gf gfds gfds gfds gf dsgfdsgdsgfdsgdsgfdsgdsgfdsgdg fdg gf gfds gfds gfds gf dsgfdsgdsgfdsgdsgfdsgdsgfdsgdg fdg gf gfds gfds gfds gf dsgfdsgdsgfdsgdsgfdsgdsgfdsgdg fdg gf gfds gfds gfds gf dsgfdsgdsgfdsgdsgfdsgdsgfdsgdg fdg gf gfds gfds gfds gf dsgfdsgdsgfdsgdsgfdsgdsgfdsgdg fdg gf gfds gfds gfds gf dsgfdsgdsgfdsgdsgfdsgdsgfdsgdg fdg gf gfds gfds gfds gf dsgfdsgdsgfdsgdsgfdsgdsgfdsgdg fdg gf gfds gfds gfds gf dsgfdsgdsgfdsgdsgfdsgdsgfdsg"
+autowrap = true

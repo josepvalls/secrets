@@ -1,0 +1,192 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Person.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/OpenSans-Medium.ttf" type="DynamicFontData" id=12]
+[ext_resource path="res://assets/phone.png" type="Texture" id=13]
+[ext_resource path="res://assets/circle.png" type="Texture" id=14]
+[ext_resource path="res://BackBufferClip.tres" type="Material" id=15]
+[ext_resource path="res://assets/circle_crop.png" type="Texture" id=16]
+[ext_resource path="res://assets/3x3.png" type="Texture" id=17]
+[ext_resource path="res://phone.gd" type="Script" id=18]
+
+[sub_resource type="DynamicFont" id=3]
+size = 24
+font_data = ExtResource( 12 )
+
+[sub_resource type="Theme" id=4]
+Label/fonts/font = SubResource( 3 )
+
+[sub_resource type="Gradient" id=5]
+colors = PoolColorArray( 0.647059, 0.858824, 0.901961, 1, 0.464752, 0.710289, 0.757813, 1 )
+
+[sub_resource type="GradientTexture2D" id=6]
+gradient = SubResource( 5 )
+width = 308
+height = 380
+fill = 1
+fill_from = Vector2( 0.28125, 0.283333 )
+
+[node name="Phone" type="Node2D"]
+script = ExtResource( 18 )
+
+[node name="PhoneBG" type="Sprite" parent="."]
+position = Vector2( 1225, 532 )
+texture = ExtResource( 13 )
+
+[node name="Phone" type="Node2D" parent="."]
+
+[node name="NameLabel" type="Label" parent="Phone"]
+margin_left = 1009.0
+margin_top = 160.0
+margin_right = 1444.0
+margin_bottom = 305.0
+rect_pivot_offset = Vector2( -1026, 501 )
+theme = SubResource( 4 )
+text = "Name"
+align = 1
+autowrap = true
+
+[node name="Hangup" type="Sprite" parent="Phone"]
+position = Vector2( 1225, 753 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 14 )
+
+[node name="HangupRect" type="ColorRect" parent="Phone"]
+margin_left = 1152.0
+margin_top = 693.0
+margin_right = 1295.0
+margin_bottom = 810.0
+mouse_filter = 1
+color = Color( 1, 1, 1, 0 )
+
+[node name="BackBufferCopy" type="BackBufferCopy" parent="Phone"]
+light_mask = 2
+position = Vector2( 1225, 532 )
+copy_mode = 2
+
+[node name="Screen" type="Node2D" parent="Phone/BackBufferCopy"]
+position = Vector2( 0, -230 )
+
+[node name="PhotoBG" type="TextureRect" parent="Phone/BackBufferCopy/Screen"]
+margin_left = -162.0
+margin_top = -327.8
+margin_right = 146.0
+margin_bottom = 52.2
+mouse_filter = 2
+texture = SubResource( 6 )
+
+[node name="PersonHolder" type="Node2D" parent="Phone/BackBufferCopy/Screen"]
+position = Vector2( -9, -175.8 )
+scale = Vector2( 0.4, 0.4 )
+
+[node name="Person" parent="Phone/BackBufferCopy/Screen/PersonHolder" instance=ExtResource( 1 )]
+position = Vector2( 0, 0 )
+scale = Vector2( 1, 1 )
+
+[node name="CircleCrop" type="Sprite" parent="Phone/BackBufferCopy/Screen"]
+light_mask = 0
+material = ExtResource( 15 )
+position = Vector2( -7, -156.8 )
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 16 )
+
+[node name="TextBG" type="ColorRect" parent="Phone/BackBufferCopy/Screen"]
+margin_left = -235.0
+margin_top = 79.0
+margin_right = 204.0
+margin_bottom = 158.0
+mouse_filter = 2
+color = Color( 0.0352941, 0.576471, 0.156863, 1 )
+
+[node name="TextBG2" type="ColorRect" parent="Phone/BackBufferCopy/Screen"]
+margin_left = -235.0
+margin_top = 340.0
+margin_right = 204.0
+margin_bottom = 385.0
+mouse_filter = 2
+color = Color( 0.0352941, 0.576471, 0.156863, 1 )
+
+[node name="TextBG3" type="ColorRect" parent="Phone/BackBufferCopy/Screen"]
+margin_left = -197.0
+margin_top = 253.0
+margin_right = 242.0
+margin_bottom = 332.0
+mouse_filter = 2
+color = Color( 0.281219, 0.433878, 0.757813, 1 )
+
+[node name="TextBG4" type="ColorRect" parent="Phone/BackBufferCopy/Screen"]
+margin_left = -197.0
+margin_top = 24.0
+margin_right = 242.0
+margin_bottom = 69.0
+mouse_filter = 2
+color = Color( 0.281219, 0.433878, 0.757813, 1 )
+
+[node name="TextBG5" type="ColorRect" parent="Phone/BackBufferCopy/Screen"]
+margin_left = -235.0
+margin_top = 166.0
+margin_right = 204.0
+margin_bottom = 245.0
+mouse_filter = 2
+color = Color( 0.0352941, 0.576471, 0.156863, 1 )
+
+[node name="LineR1" type="Label" parent="Phone/BackBufferCopy/Screen"]
+margin_left = -198.0
+margin_top = 29.0
+margin_right = 204.0
+margin_bottom = 174.0
+theme = SubResource( 4 )
+text = "Hello, this is Name, what's up?"
+align = 2
+autowrap = true
+
+[node name="LineL1" type="Label" parent="Phone/BackBufferCopy/Screen"]
+margin_left = -198.0
+margin_top = 83.0
+margin_right = 204.0
+margin_bottom = 154.0
+rect_pivot_offset = Vector2( -1026, 501 )
+theme = SubResource( 4 )
+text = "Hello Name, I have a quick question for you."
+autowrap = true
+
+[node name="LineL2" type="Label" parent="Phone/BackBufferCopy/Screen"]
+margin_left = -198.0
+margin_top = 170.0
+margin_right = 197.0
+margin_bottom = 241.0
+rect_pivot_offset = Vector2( -1026, 501 )
+theme = SubResource( 4 )
+text = "Do you recall if the person you saw had strawberry hair?"
+autowrap = true
+
+[node name="LineR2" type="Label" parent="Phone/BackBufferCopy/Screen"]
+margin_left = -198.0
+margin_top = 256.0
+margin_right = 204.0
+margin_bottom = 401.0
+theme = SubResource( 4 )
+text = "Maybe. I think It was either strawberry or chocolate"
+align = 2
+autowrap = true
+
+[node name="LineL3" type="Label" parent="Phone/BackBufferCopy/Screen"]
+margin_left = -198.0
+margin_top = 344.0
+margin_right = 204.0
+margin_bottom = 489.0
+theme = SubResource( 4 )
+text = "Cool, thanks."
+autowrap = true
+
+[node name="Crop" type="Sprite" parent="Phone/BackBufferCopy"]
+light_mask = 0
+material = ExtResource( 15 )
+position = Vector2( 1, -87 )
+scale = Vector2( 434, 500 )
+texture = ExtResource( 17 )
+
+[node name="CropHint" type="Sprite" parent="Phone/BackBufferCopy/Crop"]
+visible = false
+modulate = Color( 1, 1, 1, 0.501961 )
+texture = ExtResource( 17 )

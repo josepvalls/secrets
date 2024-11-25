@@ -1,0 +1,60 @@
+[gd_resource type="Theme" load_steps=9 format=2]
+
+[ext_resource path="res://assets/ShantellSans-Medium.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://SmallerInterrogationSecrets.tres" type="DynamicFont" id=2]
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0.527344, 0.607664, 1, 1 )
+border_width_left = 15
+border_width_top = 15
+border_width_right = 15
+border_width_bottom = 15
+border_color = Color( 0.292, 0.365, 0.73, 1 )
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id=11]
+bg_color = Color( 0.34902, 0.407843, 0.686275, 1 )
+border_width_left = 15
+border_width_top = 15
+border_width_right = 15
+border_width_bottom = 15
+border_color = Color( 0.292, 0.365, 0.73, 1 )
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="DynamicFont" id=6]
+size = 32
+extra_spacing_bottom = -7
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 32
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=8]
+draw_center = false
+
+[sub_resource type="DynamicFont" id=9]
+size = 32
+extra_spacing_bottom = -7
+font_data = ExtResource( 1 )
+
+[resource]
+Button/fonts/font = ExtResource( 2 )
+Button/styles/focus = SubResource( 10 )
+Button/styles/hover = SubResource( 10 )
+Button/styles/normal = SubResource( 10 )
+Button/styles/pressed = SubResource( 11 )
+Label/colors/font_color = Color( 0, 0, 0, 1 )
+Label/fonts/font = SubResource( 6 )
+LineEdit/colors/font_color = Color( 0, 0, 0, 1 )
+LineEdit/fonts/font = SubResource( 7 )
+LineEdit/styles/focus = SubResource( 8 )
+LineEdit/styles/normal = SubResource( 8 )
+RichTextLabel/colors/default_color = Color( 0, 0, 0, 1 )
+RichTextLabel/fonts/normal_font = SubResource( 9 )

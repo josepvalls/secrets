@@ -1,0 +1,20 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=2]
+
+[sub_resource type="Shader" id=5]
+code = "shader_type canvas_item;
+uniform float alpha: hint_range(0.0, 1.0) = 1.0;
+uniform bool invert_mask = false;
+
+void fragment(){
+	COLOR = texture(SCREEN_TEXTURE,SCREEN_UV);
+	float alpha_total = texture(TEXTURE, UV).a;
+	if (invert_mask == true) {
+		alpha_total = 1.0 - alpha_total;
+	}
+	COLOR.a = max(alpha_total, alpha);
+}"
+
+[resource]
+shader = SubResource( 5 )
+shader_param/alpha = 0.0
+shader_param/invert_mask = true

@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/654935__jordanielmills__cell-phone-ring.wav-b9b280de7071524c8c77180b5f0a51c0.sample"
+
+[deps]
+
+source_file="res://assets/sfx/654935__jordanielmills__cell-phone-ring.wav"
+dest_files=[ "res://.import/654935__jordanielmills__cell-phone-ring.wav-b9b280de7071524c8c77180b5f0a51c0.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

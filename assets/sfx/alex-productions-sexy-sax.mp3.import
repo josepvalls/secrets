@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/alex-productions-sexy-sax.mp3-a59a6d288af5465d28b99c464eb6bb0b.mp3str"
+
+[deps]
+
+source_file="res://assets/sfx/alex-productions-sexy-sax.mp3"
+dest_files=[ "res://.import/alex-productions-sexy-sax.mp3-a59a6d288af5465d28b99c464eb6bb0b.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

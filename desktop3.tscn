@@ -1,0 +1,362 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://InterrogationPaper.tscn" type="PackedScene" id=1]
+[ext_resource path="res://photo.tscn" type="PackedScene" id=2]
+[ext_resource path="res://note.tscn" type="PackedScene" id=3]
+[ext_resource path="res://phone.tscn" type="PackedScene" id=4]
+[ext_resource path="res://InterrogationFontTheme.tres" type="Theme" id=5]
+[ext_resource path="res://assets/RobotoSlab-Black.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://assets/phone.png" type="Texture" id=7]
+[ext_resource path="res://assets/circle_05.png" type="Texture" id=8]
+[ext_resource path="res://assets/open.png" type="Texture" id=9]
+[ext_resource path="res://assets/1285977495.png" type="Texture" id=10]
+[ext_resource path="res://assets/1285977495b.png" type="Texture" id=11]
+[ext_resource path="res://assets/beige-wooden-textured-flooring-background.jpg" type="Texture" id=12]
+[ext_resource path="res://desktop3.gd" type="Script" id=13]
+[ext_resource path="res://confetti.tscn" type="PackedScene" id=14]
+[ext_resource path="res://bad_confetti.tscn" type="PackedScene" id=15]
+[ext_resource path="res://sorter.tscn" type="PackedScene" id=16]
+
+[sub_resource type="DynamicFont" id=6]
+size = 72
+font_data = ExtResource( 6 )
+
+[sub_resource type="Theme" id=2]
+Button/fonts/font = SubResource( 6 )
+Label/fonts/font = SubResource( 6 )
+
+[sub_resource type="CanvasItemMaterial" id=3]
+light_mode = 1
+
+[sub_resource type="DynamicFont" id=5]
+size = 36
+font_data = ExtResource( 6 )
+
+[sub_resource type="CanvasItemMaterial" id=7]
+light_mode = 1
+
+[node name="Desktop3" type="Node2D"]
+script = ExtResource( 13 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1659.0
+margin_bottom = 941.0
+
+[node name="Background" type="Sprite" parent="."]
+visible = false
+modulate = Color( 0.956863, 0.894118, 0.756863, 1 )
+texture = ExtResource( 12 )
+centered = false
+
+[node name="Folder1" type="Sprite" parent="."]
+self_modulate = Color( 0.466667, 0.54902, 0.447059, 1 )
+position = Vector2( 1540, -1.99998 )
+rotation = -1.4387
+texture = ExtResource( 11 )
+
+[node name="1285977495" type="Sprite" parent="Folder1"]
+self_modulate = Color( 0.603922, 0.709804, 0.576471, 1 )
+texture = ExtResource( 10 )
+
+[node name="Label" type="Label" parent="Folder1"]
+margin_left = -277.61
+margin_top = -145.705
+margin_right = 170.39
+margin_bottom = 188.295
+theme = SubResource( 2 )
+custom_colors/font_color = Color( 0.740756, 0.867188, 0.707977, 1 )
+valign = 1
+
+[node name="Envelope" type="Sprite" parent="."]
+position = Vector2( 1442, 453 )
+rotation = -0.226893
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 9 )
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 1261.0
+margin_top = 386.0
+margin_right = 1906.0
+margin_bottom = 720.0
+rect_rotation = -13.0
+rect_scale = Vector2( 0.5, 0.5 )
+theme = SubResource( 2 )
+custom_colors/font_color = Color( 0.713726, 0.0627451, 0.0627451, 1 )
+text = "CULPRIT"
+align = 1
+valign = 1
+
+[node name="PhoneBack" type="Sprite" parent="."]
+position = Vector2( 1423, 893 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 7 )
+
+[node name="Timer" type="Label" parent="."]
+unique_name_in_owner = true
+material = SubResource( 3 )
+margin_left = 1307.0
+margin_top = 698.0
+margin_right = 1541.0
+margin_bottom = 897.0
+theme = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 1, 1, 1, 0.501961 )
+custom_constants/shadow_offset_x = 1
+custom_constants/shadow_offset_y = 1
+custom_constants/shadow_as_outline = 1
+text = "00:00"
+align = 1
+valign = 1
+
+[node name="Sorted" type="Node2D" parent="."]
+
+[node name="Sorter1" parent="Sorted" instance=ExtResource( 16 )]
+margin_left = 1267.0
+margin_top = 8.0
+margin_right = 1592.0
+margin_bottom = 283.0
+color = Color( 0.607843, 0.266667, 0.266667, 0 )
+
+[node name="Sorter2" parent="Sorted" instance=ExtResource( 16 )]
+margin_left = 1275.0
+margin_top = 387.0
+margin_right = 1597.0
+margin_bottom = 642.0
+color = Color( 0.862745, 0.458824, 0.458824, 0 )
+accept_notes = false
+max_items = 1
+
+[node name="Sorter3" parent="Sorted" instance=ExtResource( 16 )]
+margin_left = 1266.0
+margin_top = 652.0
+margin_right = 1906.0
+margin_bottom = 963.0
+color = Color( 0.65098, 0.396078, 0.396078, 0 )
+accept_notes = false
+max_items = 0
+
+[node name="Clutter" type="Node2D" parent="."]
+
+[node name="Photo" parent="Clutter" instance=ExtResource( 2 )]
+position = Vector2( 487, -197 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Note" parent="Clutter" instance=ExtResource( 3 )]
+position = Vector2( 178, -237 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Sorter" parent="." instance=ExtResource( 16 )]
+margin_left = 874.0
+margin_top = -331.0
+margin_right = 1074.0
+margin_bottom = -81.0
+
+[node name="Button" type="Button" parent="."]
+visible = false
+margin_left = 2106.0
+margin_top = 1243.0
+margin_right = 2403.0
+margin_bottom = 1345.0
+theme = SubResource( 2 )
+text = " Accuse "
+
+[node name="FX" type="Node2D" parent="."]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="FX"]
+visible = false
+color = Color( 0.701961, 0.701961, 0.701961, 1 )
+
+[node name="Light2D" type="Light2D" parent="FX"]
+visible = false
+position = Vector2( 844, 276 )
+texture = ExtResource( 8 )
+texture_scale = 8.0
+energy = 0.5
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Dim" type="ColorRect" parent="FX"]
+modulate = Color( 1, 1, 1, 0 )
+margin_right = 1600.0
+margin_bottom = 900.0
+mouse_filter = 2
+color = Color( 0, 0, 0, 0.501961 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="PhoneFront" type="Sprite" parent="."]
+visible = false
+position = Vector2( 1423, 893 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 7 )
+
+[node name="Phone" parent="." instance=ExtResource( 4 )]
+visible = false
+
+[node name="Accuse" type="Node2D" parent="."]
+visible = false
+
+[node name="Dim2" type="ColorRect" parent="Accuse"]
+margin_right = 1600.0
+margin_bottom = 900.0
+color = Color( 0, 0, 0, 0.752941 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Label" type="Label" parent="Accuse"]
+margin_top = 200.0
+margin_right = 1600.0
+margin_bottom = 500.0
+theme = SubResource( 2 )
+text = "ARE YOU READY TO ACCUSE Name?"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="ButtonAccuse" type="Button" parent="Accuse/Label"]
+unique_name_in_owner = true
+margin_left = 445.0
+margin_top = 300.0
+margin_right = 745.0
+margin_bottom = 405.0
+theme = ExtResource( 5 )
+text = "Yes"
+
+[node name="ButtonBack" type="Button" parent="Accuse/Label"]
+unique_name_in_owner = true
+margin_left = 842.0
+margin_top = 300.0
+margin_right = 1142.0
+margin_bottom = 405.0
+theme = ExtResource( 5 )
+text = "No"
+
+[node name="Label2" type="Label" parent="Accuse"]
+margin_top = 373.0
+margin_right = 1600.0
+margin_bottom = 500.0
+theme = SubResource( 2 )
+custom_fonts/font = SubResource( 5 )
+text = "(If you are mistaken, you will lose 30 minutes)"
+align = 1
+valign = 1
+
+[node name="AccuseSuccess" type="Node2D" parent="."]
+visible = false
+
+[node name="Dim2" type="ColorRect" parent="AccuseSuccess"]
+margin_right = 1600.0
+margin_bottom = 900.0
+color = Color( 0, 0, 0, 0.752941 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="LabelSuccess" type="Label" parent="AccuseSuccess"]
+unique_name_in_owner = true
+margin_top = 200.0
+margin_right = 1600.0
+margin_bottom = 500.0
+theme = SubResource( 2 )
+text = "Congratulations, you found the culprit in 0h 00:00"
+align = 1
+valign = 1
+autowrap = true
+uppercase = true
+
+[node name="ButtonSuccessNext" type="Button" parent="AccuseSuccess/LabelSuccess"]
+unique_name_in_owner = true
+margin_left = 640.0
+margin_top = 300.0
+margin_right = 940.0
+margin_bottom = 405.0
+theme = ExtResource( 5 )
+text = "Next"
+
+[node name="AccuseFail" type="Node2D" parent="."]
+visible = false
+
+[node name="Dim2" type="ColorRect" parent="AccuseFail"]
+margin_right = 1600.0
+margin_bottom = 900.0
+color = Color( 0, 0, 0, 0.752941 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Label" type="Label" parent="AccuseFail"]
+margin_top = 200.0
+margin_right = 1600.0
+margin_bottom = 500.0
+theme = SubResource( 2 )
+text = "Oh, no!
+Turns out this person is innocent.."
+align = 1
+valign = 1
+autowrap = true
+uppercase = true
+
+[node name="ButtonFailBack" type="Button" parent="AccuseFail/Label"]
+unique_name_in_owner = true
+margin_left = 445.0
+margin_top = 300.0
+margin_right = 745.0
+margin_bottom = 405.0
+theme = ExtResource( 5 )
+text = "Retry"
+
+[node name="ButtonFailQuit" type="Button" parent="AccuseFail/Label"]
+unique_name_in_owner = true
+margin_left = 842.0
+margin_top = 300.0
+margin_right = 1142.0
+margin_bottom = 405.0
+theme = ExtResource( 5 )
+text = "Give up"
+
+[node name="confetti" parent="." instance=ExtResource( 14 )]
+position = Vector2( 793, 549 )
+scale = Vector2( 4, 4 )
+
+[node name="bad_confetti" parent="." instance=ExtResource( 15 )]
+position = Vector2( 861, 127 )
+
+[node name="Intro" type="Node2D" parent="."]
+visible = false
+
+[node name="IntroEnvelope" type="Sprite" parent="Intro"]
+unique_name_in_owner = true
+position = Vector2( 230, 180 )
+rotation = 0.436332
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 9 )
+
+[node name="IntroPaper0" parent="Intro" instance=ExtResource( 1 )]
+unique_name_in_owner = true
+position = Vector2( 230, 80 )
+
+[node name="ButtonNext" type="Button" parent="Intro"]
+unique_name_in_owner = true
+margin_left = 1011.0
+margin_top = 776.0
+margin_right = 1275.0
+margin_bottom = 881.0
+theme = ExtResource( 5 )
+text = "Next"
+
+[node name="ButtonHelp" type="Button" parent="."]
+unique_name_in_owner = true
+visible = false
+material = SubResource( 7 )
+margin_left = 5.0
+margin_top = 791.0
+margin_right = 178.0
+margin_bottom = 896.0
+theme = ExtResource( 5 )
+text = "Help"
+
+[node name="InterrogationPaper" parent="." instance=ExtResource( 1 )]
+position = Vector2( -901, 507 )
