@@ -115,21 +115,25 @@ func _ready():
 		i.get_node("BFF").show()
 	for i in suspects:
 		i.answers = [[],[],[],[]]
+		i.answers_neg = [0,0,0,0]
 		for j in 4:
 			var other = randi()%2
 			if other == culprit.props[j]:
 				other += 1
 			i.answers[j] = [culprit.props[j],other]
+			i.answers_neg[j] = other
 	for i in liars:
 		if cheats:
 			i.get_node("LiarLabel").show()
 		i.answers = [[],[],[],[]]
+		i.answers_neg = [0,0,0,0]
 		for j in 4:
 			var answers = []
 			for k in 3:
 				if k != culprit.props[j]:
 					answers.append(k)
 			i.answers[j] = answers
+			i.answers_neg[j] = culprit.props[j]
 	suspects.append_array(liars)
 	for friend in friends:
 		friend_to_person[friend] = []
@@ -509,15 +513,16 @@ func question_asked(item_idx):
 				note_answer = asked_about.person_name+" is a liar"
 			else:
 				text_answer = "No, "+asked_about.person_name+" is not a liar."
-				note_answer = asked_about.person_name+" is innocent"			
+				note_answer = asked_about.person_name+" not a liar"			
 	else:
 		var answer = "%s or %s" % [
 			Person.prop_values[item_idx][current_interrogation.answers[item_idx][0]], 
 			Person.prop_values[item_idx][current_interrogation.answers[item_idx][1]]
 			]
+		answer = Person.prop_values[item_idx][current_interrogation.answers_neg[item_idx]]
 		text_question = questions[item_idx]
-		text_answer = "mmm... I think it was either " + answer
-		note_answer = Person.prop_names[item_idx] + "\n" + answer
+		text_answer = "mmm... it was not " + answer
+		note_answer = Person.prop_names[item_idx] + "\nnot " + answer
 		
 
 	if current_interrogation:

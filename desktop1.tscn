@@ -162,6 +162,19 @@ margin_bottom = 881.0
 theme = ExtResource( 5 )
 text = "Next"
 
+[node name="NoteLoading" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1444, 134 )
+rotation = 0.105883
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Post-it" parent="NoteLoading" index="0"]
+modulate = Color( 0.937255, 0.490196, 0.866667, 1 )
+
+[node name="Label" parent="NoteLoading" index="1"]
+margin_top = -150.0
+margin_bottom = 119.0
+text = "Loading (may take a while)"
+
 [node name="Hints" type="Node2D" parent="."]
 visible = false
 
@@ -188,5 +201,6 @@ margin_top = -150.0
 margin_bottom = 119.0
 text = "Can you beat your own time?"
 
+[editable path="NoteLoading"]
 [editable path="Hints/Note2"]
 [editable path="Hints/Note3"]

@@ -5,7 +5,7 @@ onready var skin = [$Vanilla, $Caramel, $Chocolate]
 onready var hair = [[$Mandarin, $Mandarin2], [$Liquorice, $Liquorice3], [$Waffle1, $Waffle2]]
 
 #onready var face = [$Happy, $Sad, $Surprised]
-onready var accessory = [$Scarf2, $Glasses, $Hat2]
+onready var accessory = [[$Scarf2], [$Glasses], [$Hat, $Hat2]]
 onready var shirt = [$GreenShirt, $OrangeShirt, $BubblegumShirt]
 onready var eyes = [$"Eye-recolor1", $"Eye-recolor2", $"Eye-recolor3"]
 onready var mouths = [$Mouth1, $Mouth2, $Mouth3, $Mouth4]
@@ -46,7 +46,8 @@ func reset_person():
 		for j in i:
 			j.hide()
 	for i in accessory:
-		i.hide()
+		for j in i:
+			j.hide()
 	for i in shirt:
 		i.hide()
 	for i in mouths:
@@ -87,7 +88,8 @@ func make_person(props_, idx_):
 	#hair[props[1]].show()
 	hair[props[1]][idx_%len(hair[props[1]])].show()
 	shirt[props[2]].show()
-	accessory[props[3]].show()
+	#accessory[props[3]].show()
+	accessory[props[3]][idx_%len(accessory[props[3]])].show()
 	eyes[props[4]].show()
 	mouths[idx_ % len(mouths)].show()
 	earrings[idx_ % len(earrings)].show()

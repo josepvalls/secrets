@@ -12,6 +12,7 @@ var is_called = false
 
 var alibi = []
 var answers = []
+var answers_neg = []
 
 var new_position = Vector2.ZERO
 var new_rotation = 0.0
