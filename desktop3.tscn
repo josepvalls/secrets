@@ -41,6 +41,7 @@ script = ExtResource( 13 )
 [node name="ColorRect" type="ColorRect" parent="."]
 margin_right = 1659.0
 margin_bottom = 941.0
+color = Color( 1, 1, 0.901961, 1 )
 
 [node name="Background" type="Sprite" parent="."]
 visible = false

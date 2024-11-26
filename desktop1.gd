@@ -15,5 +15,6 @@ func _process(_delta):
 
 
 func do_play():
+	ClutterManager.play("res://assets/sfx/turn_page.wav")
 	Autoscores.set_player_name($"%LineEdit".text)
 	get_tree().change_scene("res://desktop2.tscn")

@@ -13,4 +13,5 @@ func _ready():
 
 
 func do_play():
+	ClutterManager.play("res://assets/sfx/turn_page.wav")
 	get_tree().change_scene("res://desktop1.tscn")

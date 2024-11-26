@@ -1,12 +1,9 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://photo.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/beige-wooden-textured-flooring-background.jpg" type="Texture" id=2]
 [ext_resource path="res://assets/circle_05.png" type="Texture" id=3]
 [ext_resource path="res://note.tscn" type="PackedScene" id=4]
-[ext_resource path="res://assets/Notebook-Paper-PNG.png" type="Texture" id=5]
-[ext_resource path="res://assets/vecteezy_clear-view-front-smartphone-greenscreen_46589599.png" type="Texture" id=6]
-[ext_resource path="res://assets/Lined-Paper.svg" type="Texture" id=7]
 [ext_resource path="res://phone.tscn" type="PackedScene" id=8]
 [ext_resource path="res://InterrogationPaper.tscn" type="PackedScene" id=9]
 [ext_resource path="res://InterrogationFontTheme.tres" type="Theme" id=10]
@@ -42,7 +39,7 @@ __meta__ = {
 [node name="Node2D" type="Node2D" parent="."]
 
 [node name="Photo" parent="Node2D" instance=ExtResource( 1 )]
-position = Vector2( 992, 285 )
+position = Vector2( 924, 181 )
 
 [node name="Note" parent="Node2D" instance=ExtResource( 4 )]
 position = Vector2( 326, 723 )
@@ -55,22 +52,6 @@ position = Vector2( 1004, 723 )
 
 [node name="Note4" parent="Node2D" instance=ExtResource( 4 )]
 position = Vector2( 672, 721 )
-
-[node name="Notebook-Paper-Png" type="Sprite" parent="Node2D"]
-position = Vector2( 578, 290 )
-texture = ExtResource( 5 )
-
-[node name="Lined-Paper" type="Sprite" parent="."]
-visible = false
-position = Vector2( 803, 994 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 7 )
-
-[node name="VecteezyClear-view-front-smartphone-greenscreen46589599" type="Sprite" parent="."]
-visible = false
-position = Vector2( 1169, 746 )
-scale = Vector2( 0.4, 0.4 )
-texture = ExtResource( 6 )
 
 [node name="Phone" parent="." instance=ExtResource( 8 )]
 

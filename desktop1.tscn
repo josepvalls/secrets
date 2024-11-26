@@ -123,7 +123,6 @@ valign = 1
 
 [node name="Pngwingcom" type="Sprite" parent="Intro"]
 position = Vector2( 378, 390 )
-rotation = -0.0523599
 scale = Vector2( 0.504219, 0.504219 )
 texture = ExtResource( 1 )
 
@@ -138,7 +137,7 @@ uppercase = true
 
 [node name="LineEdit" type="LineEdit" parent="Intro/Label2"]
 unique_name_in_owner = true
-margin_left = 215.0
+margin_left = 203.0
 margin_top = 182.0
 margin_right = 555.0
 margin_bottom = 282.0
