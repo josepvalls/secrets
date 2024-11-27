@@ -316,7 +316,14 @@ func handle_dropped_item(item: Node2D, accepted: bool):
 		prints("dropped", item, item.get_node("Person").person_name)
 		var dialing = ["res://assets/sfx/315921__bevibeldesign__dialing-1.wav",
 		"res://assets/sfx/315920__bevibeldesign__dialing-2.wav"]
-		ClutterManager.play(dialing[randi()%2])
+		var hello1 = ["res://assets/sfx/greeting_1_karen.wav", "res://assets/sfx/greeting_2_karen.wav", "res://assets/sfx/greeting_3_karen.wav", "res://assets/sfx/greeting_4_karen.wav", "res://assets/sfx/greeting_9_karen.wav", "res://assets/sfx/greeting_10_karen.wav"]
+		var hello2 = ["res://assets/sfx/greeting_1_meghan.wav", "res://assets/sfx/greeting_2_meghan.wav", "res://assets/sfx/greeting_3_meghan.wav", "res://assets/sfx/greeting_4_meghan.wav", "res://assets/sfx/greeting_9_meghan.wav"]
+		#ClutterManager.play(dialing[randi()%2])
+		ClutterManager.sound_queue([
+			dialing[randi()%2], 
+			hello1[randi()%len(hello1)], 
+			hello2[randi()%len(hello2)]
+			])
 		var tween = create_tween()
 		tween.set_ease(Tween.EASE_OUT)
 		tween.set_trans(Tween.TRANS_CUBIC)
@@ -421,7 +428,17 @@ func hangup():
 
 		
 func come_back():
-	ClutterManager.play("res://assets/sfx/hangup.wav")
+	#ClutterManager.play("res://assets/sfx/hangup.wav")	
+	var hello1 = ["res://assets/sfx/farewell_1_karen.wav", "res://assets/sfx/farewell_2_karen.wav", "res://assets/sfx/farewell_3_karen.wav", "res://assets/sfx/farewell_5_karen.wav", "res://assets/sfx/farewell_6_karen.wav"]
+	var hello2 = ["res://assets/sfx/farewell_1_meghan.wav", "res://assets/sfx/farewell_2_meghan.wav", "res://assets/sfx/farewell_3_meghan.wav", "res://assets/sfx/farewell_5_meghan.wav", "res://assets/sfx/farewell_6_meghan.wav"]
+	ClutterManager.sound_queue([
+		hello1[randi()%len(hello1)], 
+		#hello2[randi()%len(hello2)],
+		"res://assets/sfx/hangup.wav"
+		])
+
+	
+	
 	current_interrogation = null
 	$Phone.hide()
 	$PhoneFront.show()
@@ -472,6 +489,16 @@ func question_asked(item_idx):
 		prints("setting called")
 		current_interrogation.is_called = true
 		current_interrogation.get_node("Called").show()
+		
+	var hello1 = ["res://assets/sfx/miscellaneous_2_karen.wav", "res://assets/sfx/miscellaneous_3_karen.wav", "res://assets/sfx/miscellaneous_10_karen.wav"]
+	var hello2 = ["res://assets/sfx/confirmation_2_karen.wav", "res://assets/sfx/confirmation_8_karen.wav", "res://assets/sfx/confirmation_9_karen.wav", "res://assets/sfx/confirmation_10_karen.wav"]
+	var hello3 = ["res://assets/sfx/miscellaneous_3_karen.wav", "res://assets/sfx/miscellaneous_3_meghan.wav"]
+	ClutterManager.sound_queue([
+		#hello1[randi()%len(hello1)],
+		#hello2[randi()%len(hello2)],
+		hello3[randi()%len(hello3)],
+		]
+		)
 
 	
 	var questions = [

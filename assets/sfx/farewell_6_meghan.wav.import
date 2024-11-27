@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/farewell_6_meghan.wav-255b32c1b5600cf1ff558d980db7aa5e.sample"
+
+[deps]
+
+source_file="res://assets/sfx/farewell_6_meghan.wav"
+dest_files=[ "res://.import/farewell_6_meghan.wav-255b32c1b5600cf1ff558d980db7aa5e.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

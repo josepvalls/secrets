@@ -104,8 +104,10 @@ func drag(item: Node2D, relative: Vector2):
 var num_players = 3
 var bus = "master"
 
+var all_players = []
 var available = []  # The available players.
 var queue = []  # The queue of sounds to play.
+
 
 func _ready():
 	# Create the pool of AudioStreamPlayer nodes.
@@ -113,12 +115,14 @@ func _ready():
 		var p = AudioStreamPlayer.new()
 		add_child(p)
 		available.append(p)
+		all_players.append(p)
 		p.connect("finished", self, "_on_stream_finished", [p])
 		p.bus = bus
 	var p = AudioStreamPlayer.new()
 	add_child(p)
 	p.volume_db = -2.0
-	p.stream = preload("res://assets/sfx/alex-productions-sexy-sax.mp3")
+	#p.stream = preload("res://assets/sfx/alex-productions-sexy-sax.mp3")
+	p.stream = preload("res://assets/sfx/secret_theme02.wav")
 	p.play()
 	
 
@@ -127,10 +131,33 @@ func _ready():
 func _on_stream_finished(stream):
 	# When finished playing a stream, make the player available again.
 	available.append(stream)
+	play_next()
+	
 
 
 func play(sound_path):
 	queue.append(sound_path)
+	
+func stop_all():
+	while queue:
+		queue.pop_back()
+	while sound_queue_:
+		sound_queue_.pop_back()
+	for i in all_players:
+		i.stop()
+
+var sound_queue_ = []
+func sound_queue(sound_queue):
+	stop_all()
+	sound_queue_ = sound_queue
+	play_next()
+	
+func play_next():
+	if sound_queue_:
+		play(sound_queue_.pop_front())
+
+	
+	
 
 
 func _process(delta):

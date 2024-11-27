@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/goodluck_9_karen.wav-81f1621dd03b7e64b739509d5465ebaf.sample"
+
+[deps]
+
+source_file="res://assets/sfx/goodluck_9_karen.wav"
+dest_files=[ "res://.import/goodluck_9_karen.wav-81f1621dd03b7e64b739509d5465ebaf.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
