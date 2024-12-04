@@ -4,6 +4,7 @@ This repository contains the Godot 3.6 project for my entry for https://itch.io/
 ## Credits:
 * Game design and programming: [Josep Valls](https://josepvalls.itch.io/)
 * Visual and sound design and additional art: [Otter 841](https://otter841.itch.io/)
+* Original soundtrack by [Evgeni Doudar](https://evgenidoudar.itch.io/)
 * The character portraits are based on [Sugary Life by Butter Milk](https://butterymilk.itch.io/sugary-life) and have been edited and extended by Otter 841.
 
 ## Additional assets used:
